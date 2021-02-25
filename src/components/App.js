@@ -1,7 +1,13 @@
-import React from 'react'
+import React, { useReducer } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import reducer from '../reducers'
 
 const App = () => {
+  const [state, dispacth] = useReducer(reducer, [], )
+
+  const addEvent = e => {
+    e.preventDefault
+  }
   return (
     <div className="container-fluid">
       <h4>イベント作成フォーム</h4>
@@ -16,7 +22,7 @@ const App = () => {
           <textarea className="form-controll" id="formEventBody"/>
         </div>
 
-        <button className="btn btn-primary">イベントを作成する</button>
+        <button className="btn btn-primary" onClick={addEvent}>イベントを作成する</button>
         <button className="btn btn-danger">全てのイベントを削除する</button>
       </form>
 
