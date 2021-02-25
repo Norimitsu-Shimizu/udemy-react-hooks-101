@@ -22,7 +22,8 @@ const App = () => {
 
   const deleteAllEvents = e => {
     e.preventDefault()
-    dispatch ({
+    const result = window.confirm('全てのイベントを本当に削除してもよろしいですか？')
+    if (result) dispatch ({
       type: 'DELETE_ALL_EVENTS'
     })
   }
